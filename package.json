@@ -1,0 +1,22 @@
+{
+  "name": "joypointer-heg-wtf",
+  "version": "1.0.0",
+  "private": true,
+  "description": "JoyPointer — marketing site, Lemon Squeezy checkout, and Sparkle appcast",
+  "scripts": {
+    "test": "node --test tests/site.test.js",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "serve": "python3 -m http.server 4173"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "devDependencies": {
+    "@eslint/js": "9.39.4",
+    "eslint": "9.39.4",
+    "globals": "16.4.0",
+    "prettier": "3.6.2"
+  }
+}
