@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Sparkle appcast for JoyPointer. Do not hand-edit release items.
+  The app repository's `make release` (Scripts/release.sh) runs Sparkle's
+  generate_appcast and produces the replacement for this file, with the DMG
+  uploaded as a GitHub Release asset on this repository (tag v{version}).
+-->
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>JoyPointer Updates</title>
+    <link>https://joypointer.heg.wtf/</link>
+    <description>Most recent JoyPointer releases with links to updates.</description>
+    <language>en</language>
+  </channel>
+</rss>
