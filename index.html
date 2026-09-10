@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>JoyPointer — Your game controller is now a Mac mouse</title>
+    <meta
+      name="description"
+      content="JoyPointer is a macOS menu bar app that turns any macOS-compatible game controller into a system mouse: pointer, clicks, scroll, drag, and the on-screen keyboard. One-time $22 lifetime license."
+    />
+    <meta name="theme-color" content="#14162a" />
+    <meta property="og:title" content="JoyPointer — Your game controller is now a Mac mouse" />
+    <meta
+      property="og:description"
+      content="Move the pointer with the stick, click with A and B, scroll with the right stick. Native macOS, no mapping software. $22 once, yours for life."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://joypointer.heg.wtf/" />
+    <meta property="og:image" content="https://joypointer.heg.wtf/assets/logo.svg" />
+    <meta name="twitter:card" content="summary" />
+    <link rel="canonical" href="https://joypointer.heg.wtf/" />
+    <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+    <link rel="apple-touch-icon" href="assets/logo.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="config.js"></script>
+    <script src="script.js" defer></script>
+    <script src="https://assets.lemonsqueezy.com/lemon.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <nav class="shell nav" aria-label="Main navigation">
+        <a class="brand" href="#top" aria-label="JoyPointer home">
+          <img src="assets/logo.svg" alt="" width="36" height="36" />
+          <span>JoyPointer</span>
+        </a>
+        <div class="nav-links">
+          <a href="#how">How it works</a>
+          <a href="#pricing">Pricing</a>
+          <a href="#faq">FAQ</a>
+          <a class="button button-small" href="#pricing" data-buy>
+            <span data-buy-label>Buy</span>&nbsp;<span data-price>$22</span>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero shell" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="led" aria-hidden="true"></span>macOS 13+ · Menu bar app
+          </p>
+          <h1>Your game controller<br /><span class="accent">is now a Mac mouse.</span></h1>
+          <p class="lede">
+            JoyPointer turns any controller macOS recognizes — 8BitDo, Nintendo Pro Controller,
+            PlayStation, Xbox — into the system pointer. Stick to move, A and B to click, right
+            stick to scroll, one button for the on-screen keyboard. Native. No mapping software.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#pricing" data-buy>
+              <span data-buy-label>Buy JoyPointer</span>&nbsp;·&nbsp;<span data-price>$22</span>
+            </a>
+            <span class="fine-print"
+              >One-time payment · Lifetime updates · <span data-activation-limit>3</span> Macs</span
+            >
+          </div>
+          <p class="checkout-status" data-checkout-status hidden>
+            Checkout is being connected. Write to
+            <a href="mailto:me@heg.wtf" data-support-email>me@heg.wtf</a> to be notified the moment
+            it opens.
+          </p>
+        </div>
+
+        <figure
+          class="hero-visual"
+          aria-label="Diagram: controller input mapped to pointer actions"
+        >
+          <svg viewBox="0 0 520 360" role="img" aria-hidden="true" class="diagram">
+            <defs>
+              <linearGradient id="pad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#2b2f4a" />
+                <stop offset="1" stop-color="#14162a" />
+              </linearGradient>
+            </defs>
+            <!-- controller -->
+            <path
+              d="M120 120h200a54 54 0 0 1 52.8 43l18.6 90.6A33 33 0 0 1 359 293h-4.8a33 33 0 0 1-26.7-13.6L296 234H144l-31.5 45.4A33 33 0 0 1 85.8 293H81a33 33 0 0 1-32.4-40.4L67.2 163A54 54 0 0 1 120 120Z"
+              fill="url(#pad)"
+            />
+            <path d="M138 156h24v24h24v24h-24v24h-24v-24h-24v-24h24z" fill="#f7f4ec" opacity=".9" />
+            <circle cx="208" cy="214" r="21" fill="#f7f4ec" opacity=".9" />
+            <circle cx="208" cy="214" r="9" fill="#2b2f4a" />
+            <circle cx="268" cy="228" r="17" fill="#f7f4ec" opacity=".9" />
+            <circle cx="268" cy="228" r="7" fill="#2b2f4a" />
+            <circle cx="322" cy="162" r="12" fill="#f7f4ec" opacity=".35" />
+            <circle cx="346" cy="186" r="12" fill="#ff9f43" />
+            <circle cx="298" cy="186" r="12" fill="#f7f4ec" opacity=".35" />
+            <circle cx="322" cy="210" r="12" fill="#f7f4ec" opacity=".35" />
+            <text x="342" y="191" class="glyph">A</text>
+            <!-- flow lines -->
+            <path d="M208 190 C208 110, 300 60, 400 60" class="flow" />
+            <path d="M268 210 C300 150, 380 120, 430 130" class="flow" />
+            <path d="M346 174 C380 140, 420 190, 450 200" class="flow" />
+            <!-- callouts -->
+            <g class="callout" transform="translate(400 46)">
+              <rect x="0" y="0" width="112" height="30" rx="8" />
+              <text x="12" y="20">Move pointer</text>
+            </g>
+            <g class="callout" transform="translate(430 116)">
+              <rect x="0" y="0" width="78" height="30" rx="8" />
+              <text x="12" y="20">Scroll</text>
+            </g>
+            <g class="callout" transform="translate(448 186)">
+              <rect x="0" y="0" width="66" height="30" rx="8" />
+              <text x="12" y="20">Click</text>
+            </g>
+            <!-- cursor -->
+            <path
+              d="M416 262l40 18-16 5.4 9.6 18.4-9.9 3.6-9.6-18.4-11 12.4z"
+              fill="#ff9f43"
+              stroke="#14162a"
+              stroke-width="4"
+              stroke-linejoin="round"
+            />
+          </svg>
+          <figcaption class="hero-caption">
+            Left stick or D-pad moves. Right stick scrolls. A clicks, B right-clicks. Hold to drag.
+          </figcaption>
+        </figure>
+      </section>
+
+      <section class="section shell" id="how" aria-labelledby="how-title">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2 id="how-title">Sit back. Point from the couch.</h2>
+          <p class="section-lede">
+            JoyPointer reads your controller through Apple's GameController framework and
+            synthesizes real mouse events. Every app sees an ordinary mouse.
+          </p>
+        </div>
+        <ul class="feature-grid">
+          <li>
+            <span class="feature-key">L-stick · D-pad</span>
+            <h3>Precise pointer</h3>
+            <p>
+              Analog speed with a tunable dead zone and maximum speed. The D-pad gives full-speed
+              nudges when the stick rests.
+            </p>
+          </li>
+          <li>
+            <span class="feature-key">R-stick</span>
+            <h3>Smooth scrolling</h3>
+            <p>
+              Pixel-precise vertical and horizontal scroll with sub-pixel carry, so slow scrolling
+              stays silky.
+            </p>
+          </li>
+          <li>
+            <span class="feature-key">A · B</span>
+            <h3>Click, right-click, drag</h3>
+            <p>
+              Left and right click on any face or shoulder button you pick. Hold and move to drag.
+              Double- and triple-click work like a real mouse.
+            </p>
+          </li>
+          <li>
+            <span class="feature-key">Y</span>
+            <h3>On-screen keyboard</h3>
+            <p>
+              One button opens the macOS Keyboard Viewer, another press closes it. Type a search or
+              a password without reaching for the desk.
+            </p>
+          </li>
+          <li>
+            <span class="feature-key">Auto-suspend</span>
+            <h3>Stays out of your games</h3>
+            <p>
+              Add games that ship their own controller-mouse handling, like Crimson Desert or your
+              Steam library titles, and JoyPointer pauses whenever they are in front.
+            </p>
+          </li>
+          <li>
+            <span class="feature-key">Menu bar</span>
+            <h3>Quiet by design</h3>
+            <p>
+              Lives in the menu bar. Shows connection and permission status, remembers your mapping,
+              and keeps working when another app is active.
+            </p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="section section-alt" id="mapping" aria-labelledby="mapping-title">
+        <div class="shell">
+          <div class="section-head">
+            <p class="eyebrow">Default mapping</p>
+            <h2 id="mapping-title">Sensible out of the box. Yours in a click.</h2>
+          </div>
+          <div class="table-wrap">
+            <table class="mapping">
+              <thead>
+                <tr>
+                  <th scope="col">Controller</th>
+                  <th scope="col">Action</th>
+                  <th scope="col">Adjustable</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Left stick / D-pad</td>
+                  <td>Move the pointer</td>
+                  <td>Speed, dead zone</td>
+                </tr>
+                <tr>
+                  <td>Right stick</td>
+                  <td>Scroll</td>
+                  <td>Speed, or off</td>
+                </tr>
+                <tr>
+                  <td>A</td>
+                  <td>Left click, hold to drag</td>
+                  <td>Any of A B X Y L1 R1 L2 R2</td>
+                </tr>
+                <tr>
+                  <td>B</td>
+                  <td>Right click</td>
+                  <td>Any of A B X Y L1 R1 L2 R2</td>
+                </tr>
+                <tr>
+                  <td>Y</td>
+                  <td>Toggle on-screen keyboard</td>
+                  <td>Any of A B X Y L1 R1 L2 R2</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="section shell pricing" id="pricing" aria-labelledby="pricing-title">
+        <div class="section-head">
+          <p class="eyebrow">Pricing</p>
+          <h2 id="pricing-title">One price. Yours for life.</h2>
+        </div>
+        <div class="price-card">
+          <div class="price-main">
+            <p class="price-label">JoyPointer Lifetime License</p>
+            <p class="price"><span data-price>$22</span><span class="price-once">one-time</span></p>
+            <p class="price-note">No subscription. No account. Pay once, own it.</p>
+            <a class="button button-primary button-wide" href="#pricing" data-buy>
+              <span data-buy-label>Buy JoyPointer</span>&nbsp;·&nbsp;<span data-price>$22</span>
+            </a>
+            <p class="fine-print">
+              Secure checkout by Lemon Squeezy. Taxes handled at checkout. License key and download
+              link arrive by email.
+            </p>
+          </div>
+          <ul class="price-includes">
+            <li>
+              All features, forever — pointer, scroll, clicks, drag, on-screen keyboard, game
+              auto-suspend
+            </li>
+            <li>Lifetime updates delivered by the in-app updater</li>
+            <li>
+              Activate on up to <span data-activation-limit>3</span> Macs. Deactivate one in the app
+              to move it.
+            </li>
+            <li>Korean, Japanese, and English interface</li>
+            <li>Apple Silicon and Intel, macOS 13 Ventura or later</li>
+            <li>Direct support at <a href="mailto:me@heg.wtf" data-support-email>me@heg.wtf</a></li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section section-alt" id="requirements" aria-labelledby="requirements-title">
+        <div class="shell">
+          <div class="section-head">
+            <p class="eyebrow">Requirements</p>
+            <h2 id="requirements-title">What you need</h2>
+          </div>
+          <ul class="requirements">
+            <li><strong>macOS 13 Ventura or later</strong> on Apple Silicon or Intel.</li>
+            <li>
+              <strong>A macOS-compatible controller</strong>, paired in System Settings → Bluetooth
+              first. 8BitDo pads use their Apple or D-Input mode.
+            </li>
+            <li>
+              <strong>Accessibility permission.</strong> macOS asks once; JoyPointer needs it to
+              move the pointer and post clicks.
+            </li>
+            <li>
+              <strong>A license key.</strong> JoyPointer is a paid app and controls the pointer only
+              after activation.
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section shell" id="faq" aria-labelledby="faq-title">
+        <div class="section-head">
+          <p class="eyebrow">FAQ</p>
+          <h2 id="faq-title">Questions, answered</h2>
+        </div>
+        <div class="faq">
+          <details>
+            <summary>Where is my license key?</summary>
+            <p>
+              It is in the Lemon Squeezy receipt email sent right after purchase, together with the
+              download link. You can also open the order from that email at any time. Paste the key
+              into JoyPointer → License → Activate.
+            </p>
+          </details>
+          <details>
+            <summary>How many Macs can I use it on?</summary>
+            <p>
+              One license activates up to <span data-activation-limit>3</span> Macs. To move to a
+              new Mac, open JoyPointer on an old one and choose “Deactivate this Mac”, or write to
+              us and we will free a slot.
+            </p>
+          </details>
+          <details>
+            <summary>How do updates work?</summary>
+            <p>
+              JoyPointer checks for updates itself and installs them with one click, using the
+              Sparkle framework with signed, notarized builds. Updates are included in the lifetime
+              license.
+            </p>
+          </details>
+          <details>
+            <summary>Can I get a refund?</summary>
+            <p>
+              Yes. Lemon Squeezy is the merchant of record for your purchase. If JoyPointer does not
+              work for you, email
+              <a href="mailto:me@heg.wtf" data-support-email>me@heg.wtf</a> within 14 days of
+              purchase with your order number and we will refund it.
+            </p>
+          </details>
+          <details>
+            <summary>What does the app send over the network?</summary>
+            <p>
+              Only two things, only when you activate, validate, or deactivate a license: your
+              license key and this Mac's name, sent to the Lemon Squeezy License API over HTTPS.
+              Update checks fetch a small signed feed from this site. There is no account, no
+              analytics, and no telemetry. This website has no analytics either. See the
+              <a href="privacy/">privacy policy</a>.
+            </p>
+          </details>
+          <details>
+            <summary>Why not the Mac App Store?</summary>
+            <p>
+              JoyPointer toggles the macOS Keyboard Viewer through Accessibility APIs and scans
+              Steam libraries for game auto-suspend. Neither is possible inside the App Store
+              sandbox, so JoyPointer is sold here and notarized by Apple for Gatekeeper.
+            </p>
+          </details>
+          <details>
+            <summary>Which controllers work?</summary>
+            <p>
+              Anything macOS lists as a game controller with an extended gamepad profile: 8BitDo
+              (Apple / D-Input mode), Nintendo Switch Pro Controller, PlayStation DualShock 4 and
+              DualSense, Xbox Wireless controllers, and most Bluetooth pads that follow the same
+              profile.
+            </p>
+          </details>
+        </div>
+      </section>
+
+      <section class="section cta shell" aria-labelledby="cta-title">
+        <h2 id="cta-title">Ready to point from the couch?</h2>
+        <a class="button button-primary" href="#pricing" data-buy>
+          <span data-buy-label>Buy JoyPointer</span>&nbsp;·&nbsp;<span data-price>$22</span>
+        </a>
+        <p class="fine-print">Already purchased? <a href="download/">Download again</a>.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="shell footer-inner">
+        <p>
+          © 2026 HEG Inc. JoyPointer is a trademark of HEG Inc. Controller names belong to their
+          respective owners.
+        </p>
+        <nav aria-label="Footer">
+          <a href="download/">Download</a>
+          <a href="privacy/">Privacy</a>
+          <a href="terms/">Terms &amp; Refunds</a>
+          <a href="mailto:me@heg.wtf" data-support-email>me@heg.wtf</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>
