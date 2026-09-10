@@ -175,6 +175,8 @@ test("assets referenced by the pages exist", () => {
   for (const asset of [
     "assets/logo.svg",
     "assets/favicon.svg",
+    "assets/controller-cream.webp",
+    "assets/og.jpg",
     "styles.css",
     "config.js",
     "script.js",
@@ -182,6 +184,24 @@ test("assets referenced by the pages exist", () => {
     assert.ok(fs.statSync(path.join(root, asset)).size > 0, `${asset} should not be empty`);
   }
   assert.match(read("assets/logo.svg"), /<svg[^>]*viewBox="0 0 128 128"/);
+});
+
+test("hero shows the real controller photo with alt text and a CC BY credit", () => {
+  const hero = index.match(/<img[^>]*src="assets\/controller-cream\.webp"[^>]*>/);
+  assert.ok(hero, "hero image should be the controller cutout");
+  assert.match(hero[0], /alt="[^"]*8BitDo[^"]*"/);
+  assert.match(hero[0], /width="\d+"/);
+  assert.match(hero[0], /height="\d+"/);
+  assert.match(
+    index,
+    /property="og:image" content="https:\/\/joypointer\.heg\.wtf\/assets\/og\.jpg"/,
+  );
+  // CC BY 4.0 requires author, license, and a note that the work was modified.
+  const footer = flatten(index.slice(index.indexOf("<footer")));
+  assert.match(footer, /Wide Awake!/);
+  assert.match(footer, /href="https:\/\/creativecommons\.org\/licenses\/by\/4\.0\/"/);
+  assert.match(footer, /background removed/);
+  assert.match(footer, /commons\.wikimedia\.org\/wiki\/File:8BitDo_Ultimate_C/);
 });
 
 test("README documents how releases and the appcast are updated", () => {

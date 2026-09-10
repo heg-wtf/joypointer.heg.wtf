@@ -54,3 +54,14 @@ joypointer.heg.wtf.  CNAME  heg-wtf.github.io.
 ```
 
 After the record resolves, enforce HTTPS in the repository's Pages settings (the certificate is issued automatically).
+
+## Assets and credits
+
+- `assets/controller-cream.webp` — hero image. An 8BitDo Ultimate C photographed by
+  [Wide Awake!](<https://commons.wikimedia.org/wiki/File:8BitDo_Ultimate_C_Bluetooth_Controller_(2024-05-31).jpg>),
+  licensed [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); the background was removed with
+  macOS Vision. The footer credit is required by the license — keep it (or replace the photo with your own
+  and drop the credit).
+- `assets/og.jpg` — 1200×630 Open Graph card generated from the same cutout on the sand panel.
+- `assets/logo.svg`, `assets/favicon.svg` — original marks.
+- 8BitDo is a trademark of its owner; it appears here only to describe compatible hardware.
