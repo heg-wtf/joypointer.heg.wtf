@@ -121,16 +121,29 @@ test("pricing section exists with the expected id and buy button", () => {
 
 test("appcast.xml is a well-formed Sparkle RSS feed", () => {
   const appcast = read("appcast.xml");
-  assert.match(appcast, /^<\?xml version="1\.0" encoding="utf-8"\?>/);
+  // generate_appcast writes `standalone="yes"` and orders the <rss> attributes its own way.
+  assert.match(appcast, /^<\?xml version="1\.0" encoding="utf-8"( standalone="yes")?\?>/);
+  const rssTag = appcast.match(/<rss\b[^>]*>/);
+  assert.ok(rssTag, "appcast should have an <rss> root");
+  assert.match(rssTag[0], /\bversion="2\.0"/);
   assert.match(
-    appcast,
-    /<rss version="2\.0"[^>]*xmlns:sparkle="http:\/\/www\.andymatuschak\.org\/xml-namespaces\/sparkle"/,
+    rssTag[0],
+    /xmlns:sparkle="http:\/\/www\.andymatuschak\.org\/xml-namespaces\/sparkle"/,
   );
   assert.match(
     appcast,
     /<channel>[\s\S]*<title>JoyPointer Updates<\/title>[\s\S]*<link>https:\/\/joypointer\.heg\.wtf\/<\/link>/,
   );
   assert.match(appcast, /<\/channel>\s*<\/rss>\s*$/);
+  for (const enclosure of appcast.match(/<enclosure\b[^>]*>/g) || []) {
+    assert.match(
+      enclosure,
+      /url="https:\/\/github\.com\/heg-wtf\/joypointer\.heg\.wtf\/releases\/download\/v[0-9.]+\/JoyPointer-[0-9.]+\.dmg"/,
+      `enclosure must be a release asset of this repo: ${enclosure}`,
+    );
+    assert.match(enclosure, /sparkle:edSignature="[A-Za-z0-9+/]+={0,2}"/);
+    assert.match(enclosure, /length="\d+"/);
+  }
 
   // Minimal well-formedness: every opened tag is closed in order.
   const stripped = appcast.replace(/<\?xml[^>]*\?>/, "").replace(/<!--[\s\S]*?-->/g, "");
