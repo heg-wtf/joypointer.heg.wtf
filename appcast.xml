@@ -1,15 +1,34 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--
   Sparkle appcast for JoyPointer. Do not hand-edit release items.
   The app repository's `make release` (Scripts/release.sh) runs Sparkle's
   generate_appcast and produces the replacement for this file, with the DMG
   uploaded as a GitHub Release asset on this repository (tag v{version}).
 -->
-<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
-  <channel>
-    <title>JoyPointer Updates</title>
-    <link>https://joypointer.heg.wtf/</link>
-    <description>Most recent JoyPointer releases with links to updates.</description>
-    <language>en</language>
-  </channel>
+<rss xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+    <channel>
+        <title>JoyPointer Updates</title>
+        <link>https://joypointer.heg.wtf/</link>
+        <description>Most recent JoyPointer releases with links to updates.</description>
+        <language>en</language>
+        <item>
+            <title>1.0.0</title>
+            <pubDate>Thu, 10 Sep 2026 12:24:52 +0900</pubDate>
+            <link>https://joypointer.heg.wtf/</link>
+            <sparkle:version>1</sparkle:version>
+            <sparkle:shortVersionString>1.0.0</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"><![CDATA[## JoyPointer 1.0.0
+
+First release.
+
+- Use any macOS-compatible game controller as a mouse: left stick or D-pad moves the pointer, right stick scrolls.
+- A/B click, hold to drag, Y toggles the macOS on-screen keyboard. Buttons are remappable.
+- Automatic suspend while a registered game (including Steam titles) is frontmost.
+- Menu bar only, follows the system language (English, Korean, Japanese).
+- Lifetime license, activated on up to 3 Macs. Updates arrive through the built-in updater.
+]]></description>
+            <enclosure url="https://github.com/heg-wtf/joypointer.heg.wtf/releases/download/v1.0.0/JoyPointer-1.0.0.dmg" length="1644531" type="application/octet-stream" sparkle:edSignature="yAyGNFRCFrLpEQVD3uDz0zy6taa/4MVe51HYgX5mqZLTixM8HMZFshpjeqw5PN0EOF0bjbb1MpT8RSdXj8bFDw=="/>
+        </item>
+    </channel>
 </rss>
