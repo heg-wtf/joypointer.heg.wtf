@@ -12,6 +12,19 @@
         <description>Most recent JoyPointer releases with links to updates.</description>
         <language>en</language>
         <item>
+            <title>1.0.1</title>
+            <pubDate>Sun, 18 Oct 2026 10:08:22 +0900</pubDate>
+            <link>https://joypointer.heg.wtf/</link>
+            <sparkle:version>2</sparkle:version>
+            <sparkle:shortVersionString>1.0.1</sparkle:shortVersionString>
+            <sparkle:minimumSystemVersion>13.0</sparkle:minimumSystemVersion>
+            <description sparkle:format="markdown"><![CDATA[## JoyPointer 1.0.1
+
+- JoyPointer now has its own app icon in Finder, Spotlight, and Launchpad. On macOS 26 and later it follows the system's light, dark, and tinted icon styles.
+]]></description>
+            <enclosure url="https://github.com/heg-wtf/joypointer.heg.wtf/releases/download/v1.0.1/JoyPointer-1.0.1.dmg" length="3627539" type="application/octet-stream" sparkle:edSignature="gw/6Qfi2of5jkL0AZtE+h2suWRmEEoZGYbrN7/QQVYGlsE0rB+GisATCkViILKmufEaUKBRr8hOwZ0XAG65PBw=="/>
+        </item>
+        <item>
             <title>1.0.0</title>
             <pubDate>Thu, 10 Sep 2026 12:24:52 +0900</pubDate>
             <link>https://joypointer.heg.wtf/</link>
