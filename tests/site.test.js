@@ -186,8 +186,8 @@ test("legal and download pages are present, non-empty, and linked from the foote
 
 test("assets referenced by the pages exist", () => {
   for (const asset of [
-    "assets/logo.svg",
-    "assets/favicon.svg",
+    "assets/favicon.png",
+    "assets/apple-touch-icon.png",
     "assets/controller-cream.webp",
     "assets/og.jpg",
     "styles.css",
@@ -196,7 +196,33 @@ test("assets referenced by the pages exist", () => {
   ]) {
     assert.ok(fs.statSync(path.join(root, asset)).size > 0, `${asset} should not be empty`);
   }
-  assert.match(read("assets/logo.svg"), /<svg[^>]*viewBox="0 0 128 128"/);
+});
+
+test("every page uses the app icon as its favicon", () => {
+  // PNG signature followed by the IHDR width and height (big-endian).
+  const pngSize = (file) => {
+    const header = fs.readFileSync(path.join(root, file)).subarray(0, 24);
+    assert.equal(header.toString("hex", 0, 8), "89504e470d0a1a0a", `${file} should be a PNG`);
+    return [header.readUInt32BE(16), header.readUInt32BE(20)];
+  };
+  assert.deepEqual(pngSize("assets/favicon.png"), [64, 64]);
+  assert.deepEqual(pngSize("assets/apple-touch-icon.png"), [180, 180]);
+
+  for (const [file, html] of Object.entries(pages)) {
+    const prefix = file === "index.html" ? "" : "../";
+    assert.ok(
+      html.includes(
+        `<link rel="icon" type="image/png" sizes="64x64" href="${prefix}assets/favicon.png" />`,
+      ),
+      `${file} should link the PNG favicon`,
+    );
+    assert.doesNotMatch(
+      html,
+      /favicon\.svg|logo\.svg/,
+      `${file} should not reference the retired SVG marks`,
+    );
+  }
+  assert.match(index, /<link rel="apple-touch-icon" href="assets\/apple-touch-icon\.png" \/>/);
 });
 
 test("hero shows the real controller photo with alt text and a CC BY credit", () => {
@@ -212,6 +238,8 @@ test("hero shows the real controller photo with alt text and a CC BY credit", ()
   // CC BY 4.0 requires author, license, and a note that the work was modified.
   const footer = flatten(index.slice(index.indexOf("<footer")));
   assert.match(footer, /Wide Awake!/);
+  // The app icon reuses the photo, and the app itself carries no credit, so the site credit must say so.
+  assert.match(footer, /also used for the app icon/);
   assert.match(footer, /href="https:\/\/creativecommons\.org\/licenses\/by\/4\.0\/"/);
   assert.match(footer, /background removed/);
   assert.match(footer, /commons\.wikimedia\.org\/wiki\/File:8BitDo_Ultimate_C/);

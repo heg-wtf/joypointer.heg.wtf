@@ -63,5 +63,7 @@ After the record resolves, enforce HTTPS in the repository's Pages settings (the
   macOS Vision. The footer credit is required by the license — keep it (or replace the photo with your own
   and drop the credit).
 - `assets/og.jpg` — 1200×630 Open Graph card generated from the same cutout on the sand panel.
-- `assets/logo.svg`, `assets/favicon.svg` — original marks.
+- `assets/favicon.png` (64×64) and `assets/apple-touch-icon.png` (180×180, opaque) — the JoyPointer app icon:
+  the same photo, cut out again from the full-size original with macOS Vision, on the sand background. The
+  source is `Resources/AppIcon.icon` in the app repository; the footer credit covers this use as well.
 - 8BitDo is a trademark of its owner; it appears here only to describe compatible hardware.
